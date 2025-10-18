@@ -11,18 +11,23 @@ func Ola(name string, lang string) string {
 		name = "mundo"
 	}
 
-	prefixo := prefixoOlaPortugues
+	return prefixodeSaudacao(lang) + name
+
+}
+
+func prefixodeSaudacao(lang string) (prefixo string) {
 
 	switch lang {
+
 	case "frances":
 		prefixo = prefixoOlafrances
 	case "espanhol":
 		prefixo = prefixoOlaEspanhol
+	default:
+		prefixo = prefixoOlaPortugues
 	}
-
-	return prefixo + name
+	return
 }
-
 func main() {
 	fmt.Println(Ola("", ""))
 }
